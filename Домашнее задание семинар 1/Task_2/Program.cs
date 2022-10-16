@@ -3,10 +3,10 @@
 // и выдаёт, какое число большее, а какое меньшее.
 
 System.Console.Write("Введите число_1: ");
-int number_1 = int.Parse(Console.ReadLine()!);
+double number_1 = double.Parse(Console.ReadLine()!);
 System.Console.Write("Введите число_2: ");
-int number_2 = int.Parse(Console.ReadLine()!);
-int max = number_1;
+double number_2 = double.Parse(Console.ReadLine()!);
+double max = number_1;
 if (max > number_2)
 {
     System.Console.WriteLine($"max = {number_1}");
