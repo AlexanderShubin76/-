@@ -3,8 +3,9 @@
 //  и на выходе показывает вторую цифру этого числа.
 int FindSecondNumber(int number)
 {
-    return ((number / 10) % 10);
+    return number / 10 % 10;
 }
+
 System.Console.Write("Введите трехзначное число: ");
-int number_1 = int.Parse(Console.ReadLine()!);
-System.Console.WriteLine(FindSecondNumber(number_1));
+int number1 = int.Parse(Console.ReadLine()!);
+System.Console.WriteLine(FindSecondNumber(number1));

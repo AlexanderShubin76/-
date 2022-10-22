@@ -6,10 +6,14 @@
 // 161 -> да
 void CheckNumber(int number)
 {
-if ((number % 7 == 0) && (number % 23 == 0))
-{System.Console.WriteLine("Да");}
-else {System.Console.WriteLine("Нет");}
+    if (number % 7 == 0 && number % 23 == 0)
+    {
+        System.Console.WriteLine("Да");
+    }
+
+    else System.Console.WriteLine("Нет");
 }
+
 System.Console.Write("Введите число: ");
-int number_1 = int.Parse(Console.ReadLine()!);
-CheckNumber(number_1);
+int number1 = int.Parse(Console.ReadLine()!);
+CheckNumber(number1);
