@@ -26,21 +26,27 @@ void FindPrimeNumbers(int number)
         
         while (array[s] <= Math.Sqrt(array[array.Length-1]))
         {
-
             while (k < array.Length)
             {                          
-               
+                
                 if (array[k] % array[s] == 0)
-                {  
-                    array[k-1] = array[k];
+                {   
+                    
+                    for (int i = k; i < array.Length - 1; i++)    
+                    {
+                        array [i] = array [i + 1];
+                    }
+                    Array.Resize(ref array, array.Length - 1);
+                    k=+1;
                 }
 
                 else k=+1;
+                
             }
             s++;
             k=s+1;
         }
-        System.Console.WriteLine(array); 
+        System.Console.WriteLine(string.Join(",", array)); 
     }
 }
 
