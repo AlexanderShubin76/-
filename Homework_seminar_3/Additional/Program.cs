@@ -27,7 +27,7 @@ void FindPrimeNumbers(int number)
         while (array[s] <= Math.Sqrt(array[array.Length-1]))
         {
 
-            while (array[k] < array.Length)
+            while (k < array.Length)
             {                          
                
                 if (array[k] % array[s] == 0)
@@ -37,7 +37,8 @@ void FindPrimeNumbers(int number)
 
                 else k=+1;
             }
-            s++; 
+            s++;
+            k=s+1;
         }
         System.Console.WriteLine(array); 
     }
