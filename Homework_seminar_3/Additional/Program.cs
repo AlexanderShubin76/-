@@ -21,43 +21,33 @@ void FindPrimeNumbers(int number)
     // System.Console.WriteLine(string.Join(",", array));
     
     
-        int s = 0;
-        int k = s+1;
-        
-        while (s < array.Length-1)
+        for (int i = 0; i < array.Length-1; i++)
         {
-            while (k < array.Length)
-            {                          
-                
-                if (array[k] % array[s] == 0)
-                {   
-                    
-                    for (int i = k; i < array.Length - 1; i++)    
+            for (int j = i + 1 ; j < array.Length; j++)
+            {
+                if (array[j] % array[i] == 0)
+                { 
+                    for (int s = j; s < array.Length - 1; s++)    
                     {
-                        array [i] = array [i + 1];
+                        array [s] = array [s + 1];
                     }
                     Array.Resize(ref array, array.Length - 1);
-                    k=+1;
                 }
-
-                else k=+1;
-                
             }
-            s++;
-            k=s+1;
         }
-        System.Console.WriteLine(string.Join(",", array)); 
+        System.Console.WriteLine(string.Join(",", array));
     }
 }
 
 int number1;
 while(int.TryParse(Console.ReadLine(), out number1) && number1 == 1)
 {
-    System.Console.WriteLine("Введите число N");
+    System.Console.WriteLine("Введите число N >=2");
     int numberN;
 
-    if (int.TryParse(Console.ReadLine(), out numberN) && numberN >= 2)
-        FindPrimeNumbers(numberN);
-    
-    else System.Console.WriteLine("Некорректное значение");
+    while(!int.TryParse(Console.ReadLine(), out numberN) || numberN < 2)
+    {
+        System.Console.WriteLine("Некорректное значение. Введите целое число не меньшее двух.");
+    }
+    FindPrimeNumbers(numberN);
 }
