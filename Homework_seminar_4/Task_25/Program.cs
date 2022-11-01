@@ -5,8 +5,21 @@
 
 void Makenumber(int number1, int number2)
 {
-System.Console.WriteLine(Math.Pow(number1, number2));
-}
+
+if (number2 == 0)
+    System.Console.WriteLine("1");
+
+else 
+    {
+    int result = 1;
+    
+    for (int i = 0; i <number2; i++)
+    {
+        result *= number1;
+    }
+    System.Console.WriteLine(result);
+    }
+    }
 
 
 string text = "Введите значение 1 для запуска программы "
@@ -19,18 +32,17 @@ while (int.TryParse(Console.ReadLine(), out number) && number==1)
 {
     Console.Write("Введите число А: ");
     int numberA;
-    
-    while (!int.TryParse(Console.ReadLine(), out numberA) || numberA < 1)
+    while (!int.TryParse(Console.ReadLine(), out numberA) || numberA <= 0)
     {
-        System.Console.WriteLine("Введите цифру больше 0");
+        System.Console.Write("Введите цифру > 0: ");
     }
+    
 
     Console.Write("Введите число B: ");
     int numberB;
-   
-    while (!int.TryParse(Console.ReadLine(), out numberB) || numberB < 1)
+   while (!int.TryParse(Console.ReadLine(), out numberB) || numberB < 0)
     {
-        System.Console.Write("Введите цифру больше 0: ");
+        System.Console.Write("Введите цифру >= 0: ");
     }
 
     Makenumber(numberA, numberB);

@@ -8,17 +8,43 @@ void GetArrayFromString(string str)
     char b = ' ';
     for (int i = 0; i < str.Length; i++)
     {
-        if (str[i] == a || str[i] == b) 
+        if (str[i] == a && str[i+1] == b) 
             str1 += $"";
+        if (str[i] == a && str[i+1] != b) 
+            str1 += $" ";
         
 
         else str1 += $"{str[i]}";
     }
 
+
     int [] array = new int[str1.Length];
-    for (int i = 0; i < str1.Length; i++)
+    // for (int i = 0; i < str1.Length; i++)
+    // {
+    //     array[i] = int.Parse(str1[i].ToString());
+    // }
+    // System.Console.WriteLine($"[{string.Join(", ", array)}]");
+    int s=0; int j=0;
+    for (s = 0; s < str1.Length; s++)
     {
-        array[i] = int.Parse(str1[i].ToString());
+        if (str1[j] == ' ')
+        {
+            str1.Remove(j-1,1);
+            
+        }
+
+        else
+        {
+            if (str1[j+1] != ' ')
+            {
+                array[s] = int.Parse(str1[j].ToString() + str1[j+1].ToString());
+            }
+            else 
+            {
+                array[s] = int.Parse(str1[j].ToString());
+            };
+            j++;
+        }
     }
     System.Console.WriteLine($"[{string.Join(", ", array)}]");
 }
