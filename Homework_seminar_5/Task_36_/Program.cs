@@ -4,7 +4,7 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-System.Console.Write("Задайте количество чисел в диапазоне от 2 до 100: ");
+System.Console.Write("Задайте количество чисел в массиве в диапазоне от 2 до 100: ");
 int length;
 while(!int.TryParse(Console.ReadLine(), out length)|| length > 100 || length < 2)
 {
@@ -39,7 +39,6 @@ int FindSumOfELements(int[] array)
         if (i % 2 !=0)
             result += array[i];
         
-        continue;
     }
     return result;
 }

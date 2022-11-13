@@ -42,7 +42,6 @@ int ShowQuantityOfEvenNumbers(int[] array)
         {
             count++;
         }
-        continue;
     }
     return count;
 }
