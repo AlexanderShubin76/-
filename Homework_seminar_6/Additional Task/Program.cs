@@ -54,14 +54,14 @@ int[] SortArray(int[] numbers)
     {   
         for (int j = 1; j < numbers.Length-i; j++)
         {
-            if (numbers[j] == numbers[j-1])
-                { 
-                    for (int s = j; s < numbers.Length - 1; s++)    
-                    {
-                        numbers [s] = numbers [s + 1];
-                    }
-                    Array.Resize(ref numbers, numbers.Length - 1);
-                }
+            // if (numbers[j] == numbers[j-1])
+            //     { 
+            //         for (int s = j; s < numbers.Length - 1; s++)    
+            //         {
+            //             numbers [s] = numbers [s + 1];
+            //         }
+            //         Array.Resize(ref numbers, numbers.Length - 1);
+            //     }
             if (numbers[j] < numbers[j-1])
             {
                 int temp = numbers[j-1];
@@ -77,19 +77,17 @@ int FindMEX(int[] array1)
 {
         int MEX = 0;
 
-        if (array1[0] != 0)
-            return MEX;
-
         for (int k = 0; k < array1.Length; k++)
         {
 
-            if (array1[k] != array1[^1] && array1[k]+1 != array1[k+1])
+            if (array1[k] == MEX)
             {
-                return array1[k]+1;
+                MEX++;
+                continue;
             }
 
-            if (array1[k] == array1[^1])
-                return array1[k]+1;
+            if (array1[k] > MEX)
+                return MEX;
         }
         return MEX;
     }
