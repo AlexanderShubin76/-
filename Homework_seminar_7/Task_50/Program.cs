@@ -21,7 +21,7 @@ int[,] GetArrayRandom(int rows, int cols, int minvalue = 0, int maxvalue = 9)
     {
         for (int j = 0; j < massive.GetLength(1); j++)
         {
-            massive[i,j] = rnd.Next(minvalue, maxvalue);
+            massive[i,j] = rnd.Next(minvalue, maxvalue+1);
         }
     }
     return massive;
