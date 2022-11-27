@@ -20,11 +20,11 @@ System.Console.WriteLine(FunAckermann(m1, n1));
 int FunAckermann(int m, int n)
 {
     if (m == 0)
-    return(n+1);
+        return (n + 1);
 
     if (n == 0)
-    return FunAckermann(m-1,1);
+        return FunAckermann(m - 1, 1);
 
-    return FunAckermann(m-1, FunAckermann(m, n-1));
+    return FunAckermann(m - 1, FunAckermann(m, n - 1));
 
 }
